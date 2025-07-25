@@ -1,0 +1,57 @@
+# 行业匹配系统主配置文件
+# 定义全局参数和行业列表
+
+# 系统版本信息
+version: "1.0.0"
+description: "全自动行业识别匹配系统"
+
+# 启用的行业列表
+enabled_industries:
+  - semiconductor
+  - gaming
+  - ai
+  - fintech
+  - ecommerce
+  - healthcare
+
+# 匹配算法参数
+matching_config:
+  # 权重配置 - 四层评分体系
+  layer_weights:
+    core_keywords: 0.4      # L1: 核心关键词权重
+    technical_terms: 0.3    # L2: 技术术语权重
+    application_scenarios: 0.2  # L3: 应用场景权重
+    related_entities: 0.1   # L4: 相关实体权重
+  
+  # 置信度阈值
+  thresholds:
+    high_confidence: 0.3    # 直接匹配阈值
+    low_confidence: 0.15    # 最低匹配阈值
+    fuzzy_similarity: 0.85  # 模糊匹配相似度阈值
+  
+  # 匹配参数
+  parameters:
+    min_keyword_frequency: 1         # 关键词最少出现次数
+    max_industries_per_article: 3    # 每篇文章最多匹配行业数
+    context_window_size: 50          # 上下文窗口大小（词数）
+    boost_factor_nearby: 1.2         # 相邻关键词加权因子
+    boost_factor_cluster: 1.5        # 关键词聚集加权因子
+
+# 性能配置
+performance:
+  batch_size: 1000           # 批处理大小
+  max_workers: 3             # 最大线程数
+  timeout_seconds: 18000     # 超时时间（5小时）
+  cache_enabled: true        # 是否启用缓存
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  file_pattern: "industry_matching_{timestamp}.log"
+  
+# 数据库配置
+database:
+  table_name: "news_items"
+  industry_field: "industries"
+  batch_update_size: 100

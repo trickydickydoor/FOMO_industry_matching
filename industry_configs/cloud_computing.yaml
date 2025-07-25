@@ -1,0 +1,298 @@
+# 云计算行业特征配置文件
+# 基于云服务、数据中心、云原生技术的多维度识别
+
+industry_info:
+  id: "cloud_computing"
+  name: "云计算"
+  description: "云服务、数据中心、云原生技术及相关基础设施"
+  priority: 5
+
+# L1层：核心关键词 (权重 0.4)
+# 直接提及云计算相关的核心概念
+core_keywords:
+  cloud_basic:
+    - 云计算
+    - 云服务
+    - 云平台
+    - 公有云
+    - 私有云
+    - 混合云
+    - 多云
+    - 边缘云
+    - 分布式云
+    - 云原生
+    - 云迁移
+    - 上云
+    - 云化
+    - 数字化转型
+  
+  service_models:
+    - IaaS
+    - PaaS
+    - SaaS
+    - 基础设施即服务
+    - 平台即服务
+    - 软件即服务
+    - 函数即服务
+    - FaaS
+    - 容器即服务
+    - CaaS
+    - 桌面即服务
+    - DaaS
+    - 数据库即服务
+    - DBaaS
+  
+  cloud_infrastructure:
+    - 数据中心
+    - 云数据中心
+    - 服务器
+    - 虚拟化
+    - 超融合
+    - 分布式存储
+    - 对象存储
+    - 块存储
+    - 文件存储
+    - CDN
+    - 内容分发网络
+    - 负载均衡
+
+# L2层：技术术语 (权重 0.3)
+# 云计算技术栈相关的专业术语
+technical_terms:
+  virtualization:
+    - 虚拟机
+    - VM
+    - 容器
+    - Docker
+    - Kubernetes
+    - K8s
+    - 容器编排
+    - 微服务
+    - 服务网格
+    - Service Mesh
+    - Istio
+    - 虚拟化技术
+    - 超级融合
+    - 资源池化
+  
+  cloud_native:
+    - 云原生
+    - 容器化
+    - 服务网格
+    - 不可变基础设施
+    - 声明式API
+    - GitOps
+    - DevOps
+    - CI/CD
+    - 持续集成
+    - 持续部署
+    - 基础设施即代码
+    - IaC
+    - 配置管理
+    - 自动化运维
+  
+  storage_compute:
+    - 弹性计算
+    - 自动扩缩容
+    - 弹性伸缩
+    - 计算实例
+    - 存储卷
+    - 快照
+    - 镜像
+    - 备份恢复
+    - 灾难恢复
+    - 高可用
+    - 故障转移
+    - 数据同步
+    - 数据迁移
+  
+  networking:
+    - 虚拟网络
+    - VPC
+    - 软件定义网络
+    - SDN
+    - 网络虚拟化
+    - 专线连接
+    - VPN
+    - 网关
+    - 防火墙
+    - 安全组
+    - 流量控制
+    - 带宽管理
+
+# L3层：应用场景 (权重 0.2)
+# 云计算在各个领域的应用
+application_scenarios:
+  enterprise_applications:
+    - 企业上云
+    - 办公协同
+    - ERP上云
+    - CRM云化
+    - 财务系统
+    - 人力资源系统
+    - 供应链管理
+    - 客户服务系统
+    - 企业邮箱
+    - 视频会议
+    - 在线办公
+    - 远程办公
+  
+  development_operations:
+    - 开发测试
+    - 应用部署
+    - 代码托管
+    - 版本控制
+    - 构建发布
+    - 环境管理
+    - 性能监控
+    - 日志分析
+    - 运维管理
+    - 自动化测试
+    - 蓝绿部署
+    - 灰度发布
+  
+  data_analytics:
+    - 大数据分析
+    - 数据仓库
+    - 数据湖
+    - 商业智能
+    - 机器学习平台
+    - AI训练
+    - 数据处理
+    - 实时计算
+    - 流式处理
+    - 批处理
+    - 数据挖掘
+    - 数据可视化
+  
+  industry_solutions:
+    - 金融云
+    - 医疗云
+    - 教育云
+    - 政务云
+    - 工业云
+    - 零售云
+    - 游戏云
+    - 直播云
+    - 视频云
+    - 移动云
+    - 混合办公
+    - 数字政府
+
+# L4层：相关实体 (权重 0.1)
+# 云计算产业链相关的公司、产品、平台
+related_entities:
+  global_cloud_providers:
+    - 亚马逊
+    - AWS
+    - 微软
+    - Azure
+    - 谷歌
+    - "Google Cloud"
+    - IBM
+    - "IBM Cloud"
+    - 甲骨文
+    - Oracle
+    - VMware
+    - Salesforce
+    - Adobe
+    - SAP
+  
+  chinese_cloud_providers:
+    - 阿里云
+    - 腾讯云
+    - 华为云
+    - 百度云
+    - 金山云
+    - 京东云
+    - 网易云
+    - 青云
+    - QingCloud
+    - UCloud
+    - 七牛云
+    - 又拍云
+    - 天翼云
+    - 移动云
+    - 联通云
+    - 浪潮云
+    - 曙光云
+    - 新华三
+    - "H3C"
+  
+  cloud_software:
+    - OpenStack
+    - CloudStack
+    - Docker
+    - Kubernetes
+    - Rancher
+    - Harbor
+    - Prometheus
+    - Grafana
+    - Jenkins
+    - GitLab
+    - Ansible
+    - Terraform
+    - Consul
+    - Vault
+    - Nginx
+    - Apache
+    - Redis
+    - MongoDB
+    - Elasticsearch
+  
+  datacenter_hardware:
+    - 英特尔
+    - AMD
+    - 英伟达
+    - 戴尔
+    - 惠普
+    - 联想
+    - 浪潮
+    - 曙光
+    - 华三
+    - 新华三
+    - 思科
+    - 华为
+    - 中兴
+    - 锐捷
+    - 深信服
+
+# 特殊匹配规则
+special_rules:
+  # 排除词汇：避免误判
+  exclude_keywords:
+    - 云概念股
+    - 云计算板块
+    - 炒股
+    - 股价
+    - 乌云
+    - 云雾
+    - 白云
+    - 彩云
+  
+  # 必须配对出现的词汇
+  required_pairs:
+    - ["云", "计算"]
+    - ["云", "服务"]
+    - ["云", "平台"]
+    - ["数据", "中心"]
+    - ["虚拟", "化"]
+  
+  # 上下文增强
+  context_boost:
+    - 数字化转型
+    - 信息化建设
+    - IT基础设施
+    - 弹性扩展
+    - 按需使用
+    - 成本优化
+    - 业务敏捷
+    - 技术创新
+    - 资源整合
+    - 统一管理
+    - 服务治理
+    - 运维自动化
+    - 安全合规
+    - 性能优化
+    - 高可用性
+    - 容灾备份

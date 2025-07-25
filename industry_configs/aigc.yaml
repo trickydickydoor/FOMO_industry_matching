@@ -1,0 +1,324 @@
+# AIGC行业特征配置文件
+# 基于AI内容生成、文本/图像/视频生成、创作工具的多维度识别
+
+industry_info:
+  id: "aigc"
+  name: "AIGC"
+  description: "AI内容生成、文本生成、图像生成、视频生成及创作工具"
+  priority: 13
+
+# L1层：核心关键词 (权重 0.4)
+# 直接提及AIGC相关的核心概念
+core_keywords:
+  aigc_basic:
+    - AIGC
+    - AI内容生成
+    - AI生成内容
+    - 人工智能内容生成
+    - 生成式AI
+    - 生成式人工智能
+    - AI创作
+    - 内容生成
+    - 自动内容生成
+    - 智能内容生成
+    - AI辅助创作
+    - 创意AI
+    - 生成模型
+    - 内容创作
+  
+  content_generation:
+    - 文本生成
+    - 图像生成
+    - 视频生成
+    - 音频生成
+    - 语音生成
+    - 音乐生成
+    - 代码生成
+    - 3D生成
+    - 动画生成
+    - 设计生成
+    - 创意生成
+    - 自动写作
+    - AI绘画
+    - AI作曲
+  
+  generation_models:
+    - 扩散模型
+    - Diffusion
+    - 生成对抗网络
+    - GAN
+    - 变分自编码器
+    - VAE
+    - 自回归模型
+    - Transformer
+    - GPT模型
+    - 多模态生成
+    - 条件生成
+    - 无条件生成
+    - 文本到图像
+    - 图像到图像
+
+# L2层：技术术语 (权重 0.3)
+# AIGC技术相关的专业术语
+technical_terms:
+  generation_tech:
+    - 提示工程
+    - Prompt Engineering
+    - 提示词
+    - 微调
+    - Fine-tuning
+    - LoRA
+    - 指令调优
+    - 风格迁移
+    - 图像修复
+    - 图像增强
+    - 超分辨率
+    - 去噪
+    - 补全
+    - 编辑
+  
+  model_architectures:
+    - Stable Diffusion
+    - DALL-E
+    - Midjourney
+    - GPT
+    - CLIP
+    - ControlNet
+    - Dreambooth
+    - Textual Inversion
+    - Latent Diffusion
+    - Score-based Models
+    - Flow-based Models
+    - Energy-based Models
+    - Autoregressive Models
+    - Masked Language Models
+  
+  training_optimization:
+    - 数据集构建
+    - 数据标注
+    - 模型训练
+    - 损失函数
+    - 优化算法
+    - 正则化
+    - 数据增强
+    - 对抗训练
+    - 知识蒸馏
+    - 量化
+    - 剪枝
+    - 加速推理
+    - 模型压缩
+    - 边缘部署
+  
+  evaluation_metrics:
+    - 生成质量
+    - 多样性
+    - 一致性
+    - 保真度
+    - FID
+    - IS
+    - CLIP Score
+    - 人工评估
+    - 自动评估
+    - A/B测试
+    - 用户反馈
+    - 内容审核
+    - 安全检测
+    - 版权检测
+
+# L3层：应用场景 (权重 0.2)
+# AIGC在各个领域的应用
+application_scenarios:
+  content_creation:
+    - 营销素材
+    - 广告创意
+    - 社交媒体内容
+    - 品牌设计
+    - 海报设计
+    - Logo设计
+    - 包装设计
+    - UI设计
+    - 图标设计
+    - 插画创作
+    - 漫画创作
+    - 概念设计
+    - 产品设计
+    - 建筑设计
+  
+  media_entertainment:
+    - 影视制作
+    - 动画制作
+    - 游戏开发
+    - 角色设计
+    - 场景设计
+    - 特效制作
+    - 音效制作
+    - 配音合成
+    - 剧本创作
+    - 故事生成
+    - 小说创作
+    - 诗歌创作
+    - 音乐创作
+    - 视频剪辑
+  
+  business_applications:
+    - 产品描述
+    - 商业文案
+    - 新闻写作
+    - 报告生成
+    - 翻译服务
+    - 摘要生成
+    - 客服对话
+    - 邮件生成
+    - 演示文稿
+    - 培训材料
+    - 教学内容
+    - 课件制作
+    - 题目生成
+    - 代码辅助
+  
+  personal_tools:
+    - 头像生成
+    - 表情包制作
+    - 个人助理
+    - 写作辅助
+    - 学习辅助
+    - 创意启发
+    - 艺术创作
+    - 娱乐互动
+    - 虚拟形象
+    - 换脸应用
+    - 年龄变换
+    - 风格转换
+    - 照片修复
+    - 图像美化
+
+# L4层：相关实体 (权重 0.1)
+# AIGC产业链相关的公司、产品、平台
+related_entities:
+  global_aigc_companies:
+    - OpenAI
+    - Stability AI
+    - Midjourney
+    - Anthropic
+    - RunwayML
+    - Jasper
+    - Copy.ai
+    - Synthesia
+    - Descript
+    - Luma Labs
+    - Pika Labs
+    - Eleven Labs
+    - Mubert
+    - Adobe
+    - Canva
+    - Figma
+    - Notion
+    - GitHub Copilot
+    - Replit
+    - Hugging Face
+  
+  chinese_aigc_companies:
+    - 百度
+    - 阿里巴巴
+    - 腾讯
+    - 字节跳动
+    - 商汤科技
+    - 旷视科技
+    - 依图科技
+    - 云从科技
+    - 第四范式
+    - 明略科技
+    - 澜舟科技
+    - 智谱AI
+    - 月之暗面
+    - 零一万物
+    - 深度求索
+    - 昆仑万维
+    - "360AI"
+    - 小米AI
+    - 华为AI
+    - 科大讯飞
+  
+  aigc_products:
+    - ChatGPT
+    - "GPT-4"
+    - Claude
+    - Bard
+    - 文心一言
+    - 通义千问
+    - 讯飞星火
+    - ChatGLM
+    - DALL-E
+    - Midjourney
+    - Stable Diffusion
+    - Adobe Firefly
+    - Canva AI
+    - Figma AI
+    - Notion AI
+    - Jasper AI
+    - Copy.ai
+    - Synthesia
+    - RunwayML
+    - Pika Labs
+  
+  aigc_platforms:
+    - Hugging Face
+    - Civitai
+    - Leonardo AI
+    - Playground AI
+    - NightCafe
+    - Artbreeder
+    - DeepAI
+    - Craiyon
+    - Dream Studio
+    - WOMBO Dream
+    - StarryAI
+    - Fotor AI
+    - 无界AI
+    - 6pen
+    - 意间AI
+    - Draft AI
+    - 秘塔写作猫
+    - 火山写作
+    - 腾讯智影
+    - 剪映
+
+# 特殊匹配规则
+special_rules:
+  # 排除词汇：避免误判
+  exclude_keywords:
+    - AIGC概念股
+    - AIGC板块
+    - 炒股
+    - 股价
+    - 传统内容制作
+    - 人工创作
+    - 手工制作
+    - 版权侵权
+  
+  # 必须配对出现的词汇
+  required_pairs:
+    - ["AI", "生成"]
+    - ["AI", "创作"]
+    - ["内容", "生成"]
+    - ["文本", "生成"]
+    - ["图像", "生成"]
+  
+  # 上下文增强
+  context_boost:
+    - 创意产业
+    - 内容产业
+    - 数字创意
+    - 创作效率
+    - 降本增效
+    - 个性化定制
+    - 批量生产
+    - 自动化创作
+    - 智能化创作
+    - 创新工具
+    - 生产力工具
+    - 创意辅助
+    - 版权保护
+    - 商业化应用
+    - 产业变革
+    - 创作民主化

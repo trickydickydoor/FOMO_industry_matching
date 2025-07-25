@@ -1,0 +1,132 @@
+name: 新闻行业关联匹配
+
+on:
+  schedule:
+    # 每小时执行一次
+    - cron: '0 * * * *'
+  push:
+    paths:
+      # 当行业配置文件变更时触发
+      - 'industry_configs/*.yaml'
+      - 'industry_configs/*.yml'
+      - 'scripts/industry_matcher.py'
+      - 'database/config_loader.py'
+  workflow_dispatch:
+    # 支持手动触发
+
+jobs:
+  industry-matching:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300  # 5小时超时
+    
+    steps:
+    - name: 检出代码
+      uses: actions/checkout@v4
+      
+    - name: 设置 Python 环境
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: 安装依赖包
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: 验证行业配置文件
+      run: |
+        echo "验证行业配置文件完整性..."
+        python -c "
+        import os
+        import yaml
+        import sys
+        
+        config_dir = 'industry_configs'
+        config_count = 0
+        error_count = 0
+        
+        print(f'扫描配置目录: {config_dir}')
+        
+        for file in os.listdir(config_dir):
+            if file.endswith(('.yaml', '.yml')) and file != 'main_config.yaml':
+                config_count += 1
+                try:
+                    with open(os.path.join(config_dir, file), 'r', encoding='utf-8') as f:
+                        config = yaml.safe_load(f)
+                        # 验证必需字段
+                        if 'industry_info' not in config:
+                            raise ValueError('缺少 industry_info 字段')
+                        if 'core_keywords' not in config:
+                            raise ValueError('缺少 core_keywords 字段')
+                        print(f'✓ {file} - {config[\"industry_info\"].get(\"name\", \"未知\")}')
+                except Exception as e:
+                    print(f'✗ {file}: {e}')
+                    error_count += 1
+        
+        print(f'\\n总计: {config_count} 个行业配置文件')
+        if error_count > 0:
+            print(f'错误: {error_count} 个文件有问题')
+            sys.exit(1)
+        else:
+            print('所有配置文件验证通过！')
+        "
+        
+    - name: 执行行业匹配任务
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      run: |
+        echo "开始执行行业匹配任务..."
+        echo "数据库URL: ${{ secrets.SUPABASE_URL }}"
+        python scripts/industry_matcher.py
+        
+    - name: 检查执行结果
+      if: always()
+      run: |
+        echo "检查最新的日志文件..."
+        if [ -d "logs" ]; then
+          latest_log=$(ls -t logs/industry_matching_*.log 2>/dev/null | head -1)
+          if [ -n "$latest_log" ]; then
+            echo "=== 执行结果摘要 ==="
+            echo "日志文件: $latest_log"
+            # 提取关键统计信息
+            if grep -q "任务执行完成" "$latest_log"; then
+              echo "✓ 任务执行完成"
+              grep "处理的新闻总数\|匹配到行业的新闻数\|匹配成功率" "$latest_log" || true
+            else
+              echo "✗ 任务可能未正常完成"
+              echo "最后几行日志:"
+              tail -10 "$latest_log" || true
+            fi
+          else
+            echo "未找到日志文件"
+          fi
+        else
+          echo "日志目录不存在"
+        fi
+        
+    - name: 上传日志文件
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: industry-matching-logs-${{ github.run_number }}
+        path: logs/
+        retention-days: 7
+        
+    - name: 上传配置文件快照
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: industry-configs-snapshot-${{ github.run_number }}
+        path: industry_configs/
+        retention-days: 3
+
+    - name: 通知执行状态
+      if: failure()
+      run: |
+        echo "::error::行业匹配任务执行失败"
+        echo "请检查日志文件了解详细错误信息"
+        echo "常见问题排查:"
+        echo "1. 检查数据库连接配置"
+        echo "2. 验证行业配置文件格式"
+        echo "3. 确认依赖包安装完整"

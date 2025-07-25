@@ -1,0 +1,288 @@
+# 人工智能行业特征配置文件
+# 基于AI技术栈、应用场景、产业生态的多维度识别
+
+industry_info:
+  id: "ai"
+  name: "人工智能"
+  description: "人工智能技术、应用及相关产业生态"
+  priority: 3
+
+# L1层：核心关键词 (权重 0.4)
+# 直接提及AI相关的核心概念
+core_keywords:
+  ai_basic:
+    - 人工智能
+    - AI
+    - 机器学习
+    - 深度学习
+    - 神经网络
+    - 大模型
+    - 大语言模型
+    - LLM
+    - GPT
+    - ChatGPT
+    - AIGC
+    - 生成式AI
+    - 智能算法
+    - 机器智能
+    - 认知计算
+  
+  model_types:
+    - Transformer
+    - BERT
+    - "GPT-3"
+    - "GPT-4"
+    - Claude
+    - LLaMA
+    - PaLM
+    - DALL-E
+    - Midjourney
+    - Stable Diffusion
+    - 扩散模型
+    - 生成对抗网络
+    - GAN
+    - VAE
+    - 强化学习
+  
+  ai_capabilities:
+    - 自然语言处理
+    - NLP
+    - 计算机视觉
+    - 语音识别
+    - 语音合成
+    - 图像识别
+    - 人脸识别
+    - 机器翻译
+    - 文本生成
+    - 图像生成
+    - 代码生成
+
+# L2层：技术术语 (权重 0.3)
+# AI技术开发、训练相关的专业术语
+technical_terms:
+  ml_algorithms:
+    - 监督学习
+    - 无监督学习
+    - 半监督学习
+    - 联邦学习
+    - 迁移学习
+    - 强化学习
+    - 对比学习
+    - 自监督学习
+    - 元学习
+    - 多任务学习
+    - 终身学习
+    - 在线学习
+  
+  neural_networks:
+    - 卷积神经网络
+    - CNN
+    - 循环神经网络
+    - RNN
+    - LSTM
+    - GRU
+    - 注意力机制
+    - 自注意力
+    - 多头注意力
+    - 残差网络
+    - ResNet
+    - 图神经网络
+    - GNN
+  
+  training_tech:
+    - 模型训练
+    - 预训练
+    - 微调
+    - 指令调优
+    - RLHF
+    - 参数高效微调
+    - LoRA
+    - 量化
+    - 蒸馏
+    - 剪枝
+    - 知识蒸馏
+    - 数据增强
+    - 正则化
+    - 批归一化
+  
+  infrastructure:
+    - GPU集群
+    - TPU
+    - AI芯片
+    - 算力
+    - 云计算
+    - 分布式训练
+    - 模型并行
+    - 数据并行
+    - 混合精度
+    - 梯度累积
+    - 算子优化
+    - 推理引擎
+    - 模型部署
+
+# L3层：应用场景 (权重 0.2)
+# AI在各个领域的应用
+application_scenarios:
+  smart_applications:
+    - 智能客服
+    - 智能助手
+    - 智能推荐
+    - 智能搜索
+    - 智能写作
+    - 智能编程
+    - 智能设计
+    - 智能翻译
+    - 智能问答
+    - 智能总结
+    - 智能分析
+    - 智能决策
+  
+  industry_ai:
+    - 智能制造
+    - 智慧医疗
+    - 智慧教育
+    - 智慧金融
+    - 智慧城市
+    - 智慧交通
+    - 智慧零售
+    - 智慧农业
+    - 智能物流
+    - 智能安防
+    - 智能家居
+    - 智能驾驶
+  
+  content_generation:
+    - AI绘画
+    - AI写作
+    - AI作曲
+    - AI配音
+    - AI视频
+    - AI动画
+    - AI设计
+    - AI编程
+    - AI翻译
+    - AI摘要
+    - AI问答
+    - AI创作
+  
+  automation:
+    - 流程自动化
+    - RPA
+    - 决策自动化
+    - 运维自动化
+    - 测试自动化
+    - 数据处理
+    - 异常检测
+    - 预测分析
+    - 风险控制
+    - 质量检测
+    - 故障诊断
+    - 优化调度
+
+# L4层：相关实体 (权重 0.1)
+# AI产业链相关的公司、产品、平台
+related_entities:
+  tech_giants:
+    - OpenAI
+    - Google
+    - 微软
+    - 百度
+    - 阿里巴巴
+    - 腾讯
+    - 字节跳动
+    - Meta
+    - 亚马逊
+    - 苹果
+    - 英伟达
+    - AMD
+    - 英特尔
+    - Anthropic
+    - Cohere
+  
+  chinese_ai_companies:
+    - 百度AI
+    - 阿里达摩院
+    - 腾讯AI
+    - 字节跳动
+    - 商汤科技
+    - 旷视科技
+    - 依图科技
+    - 云从科技
+    - 第四范式
+    - 明略科技
+    - 澜舟科技
+    - 智谱AI
+    - 月之暗面
+    - 零一万物
+    - 深度求索
+    - 昆仑万维
+    - "360AI"
+    - 小米AI
+    - 华为AI
+    - 科大讯飞
+  
+  ai_products:
+    - ChatGPT
+    - "GPT-4"
+    - Claude
+    - Bard
+    - 文心一言
+    - 通义千问
+    - 讯飞星火
+    - ChatGLM
+    - Midjourney
+    - DALL-E
+    - Stable Diffusion
+    - GitHub Copilot
+    - Notion AI
+    - Jasper
+    - Copy.ai
+  
+  ai_platforms:
+    - OpenAI API
+    - Azure AI
+    - Google AI
+    - 百度AI开放平台
+    - 阿里云AI
+    - 腾讯云AI
+    - 华为云AI
+    - AWS AI
+    - IBM Watson
+    - Salesforce AI
+    - Adobe AI
+    - 科大讯飞开放平台
+    - 商汤开放平台
+    - 旷视开放平台
+
+# 特殊匹配规则
+special_rules:
+  # 排除词汇：避免误判
+  exclude_keywords:
+    - AI概念股
+    - AI板块
+    - 炒股
+    - 股价
+    - 人工智障  # 负面用词
+  
+  # 必须配对出现的词汇
+  required_pairs:
+    - ["AI", "模型"]
+    - ["AI", "算法"]
+    - ["机器学习", "模型"]
+    - ["深度学习", "训练"]
+    - ["神经网络", "训练"]
+  
+  # 上下文增强
+  context_boost:
+    - 技术突破
+    - 算法创新
+    - 模型优化
+    - 性能提升
+    - 应用落地
+    - 商业化
+    - 数据驱动
+    - 智能化
+    - 自动化
+    - 数字化转型
+    - 产业升级
+    - 降本增效
