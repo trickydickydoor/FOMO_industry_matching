@@ -5,14 +5,54 @@
 version: "1.0.0"
 description: "全自动行业识别匹配系统"
 
-# 启用的行业列表
+# 启用的行业列表 - 全部39个行业
 enabled_industries:
-  - semiconductor
-  - gaming
-  - ai
-  - fintech
-  - ecommerce
-  - healthcare
+  # 科技类行业 (10个)
+  - ai                    # 人工智能
+  - semiconductor         # 半导体
+  - gaming               # 游戏
+  - fintech              # 金融科技
+  - cloud_computing      # 云计算
+  - saas                 # SaaS
+  - cybersecurity        # 网络安全
+  - iot                  # 物联网
+  - 5g_communication     # 5G通信
+  - robotics             # 机器人
+  
+  # 新兴热门行业 (8个)
+  - smart_manufacturing  # 智能制造
+  - commercial_space     # 商业航天
+  - aigc                 # AIGC
+  - autonomous_driving   # 智能驾驶
+  - biotechnology        # 生物医药
+  - medical_devices      # 医疗器械
+  - new_materials        # 新材料
+  - agricultural_technology  # 农业科技
+  
+  # 传统产业 (8个)
+  - automotive_manufacturing  # 汽车制造
+  - new_energy_vehicles      # 新能源汽车
+  - renewable_energy         # 新能源
+  - real_estate             # 房地产
+  - construction_engineering # 建筑工程
+  - steel_metallurgy        # 钢铁冶金
+  - petrochemicals          # 石油化工
+  - textile_apparel         # 纺织服装
+  
+  # 服务业 (13个)
+  - ecommerce               # 电子商务
+  - cross_border_ecommerce  # 跨境电商
+  - logistics_express       # 物流快递
+  - online_education        # 在线教育
+  - tourism_hotels          # 旅游酒店
+  - retail_consumer         # 零售消费
+  - idc_data_center         # IDC数据中心
+  - short_video_live_streaming  # 短视频直播
+  - local_life_services     # 本地生活服务
+  - healthcare              # 大健康
+  - content_creation        # 内容创作
+  - enterprise_services     # 企业服务
+  - cultural_creative       # 文化创意
 
 # 匹配算法参数
 matching_config:
