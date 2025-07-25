@@ -144,7 +144,7 @@ class IndustryMatcher:
                     # 转换为小写进行匹配
                     processed_terms = {}
                     for layer, keywords in terms.items():
-                        processed_terms[layer] = [kw.lower().strip() for kw in keywords if kw]
+                        processed_terms[layer] = [str(kw).lower().strip() for kw in keywords if kw is not None]
                     self.industry_terms[industry_id] = processed_terms
             
             self.logger.info(f"成功加载 {len(self.industry_configs)} 个行业配置")
