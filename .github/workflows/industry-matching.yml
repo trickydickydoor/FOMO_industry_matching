@@ -24,14 +24,17 @@ jobs:
       uses: actions/checkout@v4
       
     - name: 设置 Python 环境
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.9'
+        python-version: '3.11'
         
     - name: 安装依赖包
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip cache purge
+        pip install --no-cache-dir -r requirements.txt
+        echo "已安装的包版本:"
+        pip list | grep -E "(supabase|pyyaml|pytz)"
         
     - name: 验证行业配置文件
       run: |
@@ -69,6 +72,47 @@ jobs:
             sys.exit(1)
         else:
             print('所有配置文件验证通过！')
+        "
+    
+    - name: 测试数据库连接
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      run: |
+        echo "测试 Supabase 数据库连接..."
+        python -c "
+        import os
+        import sys
+        
+        # 检查环境变量
+        url = os.getenv('SUPABASE_URL')
+        key = os.getenv('SUPABASE_KEY')
+        
+        if not url:
+            print('错误: SUPABASE_URL 环境变量未设置')
+            sys.exit(1)
+        if not key:
+            print('错误: SUPABASE_KEY 环境变量未设置')
+            sys.exit(1)
+            
+        print(f'数据库URL: {url[:20]}...')
+        print(f'API Key长度: {len(key)} 字符')
+        
+        try:
+            from supabase import create_client
+            client = create_client(url, key)
+            
+            # 测试简单查询
+            response = client.table('news_items').select('id').limit(1).execute()
+            print('✓ 数据库连接测试成功')
+            print(f'测试查询返回: {len(response.data) if response.data else 0} 条记录')
+            
+        except Exception as e:
+            print(f'✗ 数据库连接失败: {e}')
+            print(f'错误类型: {type(e).__name__}')
+            import traceback
+            traceback.print_exc()
+            sys.exit(1)
         "
         
     - name: 执行行业匹配任务

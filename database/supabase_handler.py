@@ -73,7 +73,16 @@ class SupabaseHandler:
                 return False
             
             # 创建 Supabase 客户端
-            self.client = create_client(url, key)
+            try:
+                # 尝试使用新版本的创建方式
+                self.client = create_client(url, key)
+            except TypeError as e:
+                if 'proxy' in str(e):
+                    # 如果是 proxy 参数问题，尝试不同的初始化方式
+                    from supabase import Client
+                    self.client = Client(url, key)
+                else:
+                    raise e
             
             # 检测 API Key 类型
             self.api_key_type = self._check_api_key_type(key)

@@ -108,6 +108,15 @@ class IndustryMatcher:
             if not self.supabase_handler.client:
                 self.logger.error("Supabase 客户端初始化失败")
                 return False
+            
+            # 测试连接
+            try:
+                # 简单的连接测试
+                test_response = self.supabase_handler.client.table('news_items').select('id').limit(1).execute()
+                self.logger.info("Supabase 连接测试成功")
+            except Exception as e:
+                self.logger.error(f"Supabase 连接测试失败: {e}")
+                return False
                 
             self.logger.info("Supabase 连接初始化成功")
             return True
