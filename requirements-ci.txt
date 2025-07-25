@@ -1,0 +1,30 @@
+# CI/CD 环境依赖包 - 针对 GitHub Actions 优化
+
+# 数据库连接
+supabase>=2.8.0,<3.0.0
+
+# YAML配置文件处理
+PyYAML>=6.0.1
+
+# 时区处理
+pytz>=2023.3
+
+# 其他核心依赖
+requests>=2.31.0
+typing-extensions>=4.12.2
+
+# 文本处理和相似度计算
+jieba>=0.42.1
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.23.0
+
+# 日志和调试
+colorlog>=6.8.0
+
+# 数据处理 - 使用预编译版本
+pandas
+numpy
+
+# 开发和测试 - 可选
+pytest
+pytest-cov

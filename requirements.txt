@@ -1,30 +1,30 @@
 # 行业匹配系统依赖包
 
 # 数据库连接
-supabase==2.8.0
+supabase>=2.8.0,<3.0.0
 
 # YAML配置文件处理
-PyYAML==6.0.1
+PyYAML>=6.0.1
 
 # 时区处理
-pytz==2023.3
+pytz>=2023.3
 
 # 其他核心依赖
-requests==2.31.0
-typing-extensions==4.8.0
+requests>=2.31.0
+typing-extensions>=4.12.2
 
 # 开发和测试
-pytest==7.4.3
-pytest-cov==4.1.0
+pytest>=7.4.3
+pytest-cov>=4.1.0
 
 # 日志和调试
-colorlog==6.8.0
+colorlog>=6.8.0
 
 # 数据处理
-pandas==2.1.4
-numpy==1.24.4
+pandas>=2.1.4
+numpy>=1.24.4,<2.0.0
 
 # 文本处理和相似度计算
-jieba==0.42.1
-fuzzywuzzy==0.18.0
-python-Levenshtein==0.23.0
+jieba>=0.42.1
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.23.0

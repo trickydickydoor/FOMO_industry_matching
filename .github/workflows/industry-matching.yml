@@ -32,9 +32,16 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip cache purge
-        pip install --no-cache-dir -r requirements.txt
+        # 优先使用 CI 专用依赖文件
+        if [ -f "requirements-ci.txt" ]; then
+          echo "使用 CI 专用依赖文件"
+          pip install --no-cache-dir -r requirements-ci.txt
+        else
+          echo "使用标准依赖文件"
+          pip install --no-cache-dir -r requirements.txt
+        fi
         echo "已安装的包版本:"
-        pip list | grep -E "(supabase|pyyaml|pytz)"
+        pip list | grep -E "(supabase|pyyaml|pytz|typing-extensions)"
         
     - name: 验证行业配置文件
       run: |
