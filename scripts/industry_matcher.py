@@ -586,7 +586,7 @@ class IndustryMatcher:
         
         # 多线程处理配置
         max_workers = self.performance_config.get("max_workers", 3)
-        batch_size = self.performance_config.get("batch_size", 1000)
+        batch_size = self.performance_config.get("batch_size", 10)
         all_updates = []
         
         self.logger.info(f"使用 {max_workers} 个线程，每批处理 {batch_size} 条新闻")

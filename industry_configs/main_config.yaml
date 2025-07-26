@@ -79,8 +79,8 @@ matching_config:
 
 # 性能配置
 performance:
-  batch_size: 1000           # 批处理大小
-  max_workers: 3             # 最大线程数
+  batch_size: 10             # 批处理大小 - 小批次快速反馈
+  max_workers: 3             # 最大线程数 - 保持稳定性
   timeout_seconds: 18000     # 超时时间（5小时）
   cache_enabled: true        # 是否启用缓存
 
